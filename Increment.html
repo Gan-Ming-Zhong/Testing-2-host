@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Increment Page</title>
+  </head>
+  <body>
+    <h1>Increment Page</h1>
+    <p>Count: <span id="count">0</span></p>
+    <button id="increment">Increment</button>
+    <script>
+      let count = parseInt(localStorage.getItem('count') || '0');
+      document.getElementById('count').innerText = count;
+      document.getElementById('increment').addEventListener('click', () => {
+        count++;
+        localStorage.setItem('count', count.toString());
+        document.getElementById('count').innerText = count;
+      });
+    </script>
+  </body>
+</html>
